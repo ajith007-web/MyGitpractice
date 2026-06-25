@@ -6,6 +6,15 @@ on:
   pull_request:
     branches:
       - main
+  workflow_call:
+    inputs:
+      name:
+        description: 'Name of the person'
+        required: true
+        type: string
+        default: 'John Doe'
+
+
 jobs:
   running_commands:
     runs-on: ubuntu-latest
@@ -15,4 +24,6 @@ jobs:
       - name: run commands
         run: ls -lrt
       - name: run echo
-        run: echo "finished workflow job"
+        run: echo "actions created by ${inputs.name}"
+  
+
