@@ -24,6 +24,6 @@ jobs:
       - name: run commands
         run: ls -lrt
       - name: run echo
-        run: echo "actions created by ${inputs.name}"
+        run: echo "actions created by ${{inputs.name}}"
   
 
