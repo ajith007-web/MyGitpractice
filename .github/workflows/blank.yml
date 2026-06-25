@@ -1,12 +1,12 @@
 name: myworkflow
 on: 
-  push:
-    branches: 
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_call:
+  # push:
+  #   branches: 
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
+  workflow_dispatch:
     inputs:
       name:
         description: 'Name of the person'
