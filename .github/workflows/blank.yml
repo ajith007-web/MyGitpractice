@@ -15,4 +15,4 @@ jobs:
       - name: run commands
         run: ls -lrt
       - name: run echo
-        run: echo "finished workflow job
+        run: echo "finished workflow job"
