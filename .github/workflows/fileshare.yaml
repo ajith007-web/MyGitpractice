@@ -1,0 +1,28 @@
+name: share_file_or_artifact
+on: workflow_dispatch
+jobs:
+    job1:
+      runs-on: ubuntu-latest
+      steps:
+        - name: create a file
+          run: |
+           mkdir mytest
+           echo "this is test file in job1" >> mytest/myfile.txt
+        - name: upload the file
+          uses: actions/upload-artifact@v7
+          with:
+            name: testfile
+            path: mytest/
+    
+    job2:
+      runs-on: ubuntu-latest
+      steps:
+        - name: download file from job1
+          uses: actions/download-artifact@v7
+          with: 
+            name: testfile
+            path: downloaded/
+        - name: verify
+          run: |
+           ls -lrt
+           cat downloaded/myfile.txt
