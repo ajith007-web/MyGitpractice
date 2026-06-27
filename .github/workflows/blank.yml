@@ -7,18 +7,19 @@ on:
   #   branches:
   #     - main
   workflow_dispatch:
-    inputs:
-      name:
-        description: 'Name of the person'
-        required: true
-        type: string
-        default: 'John Doe'
+    # inputs:
+    #   name:
+    #     description: 'Name of the person'
+    #     required: true
+    #     type: string
+    #     default: 'John Doe'
 
 env:
-  MY_ENV_VAR: "This is an global environment variable by ${{inputs.name}}"
+  MY_ENV_VAR: "This is an global environment variable by"
 
 
 jobs:
+
   # myjob:
   #   runs-on: ubuntu-latest
   #   steps:
@@ -52,24 +53,24 @@ jobs:
   #     - name: step 2
   #       run: echo ${{env.MY_ENV_VAR}}
 
-    job-matrix:
-      runs-on: ${{ matrix.os }}
-      strategy:
-        matrix:
-          name: 
-            - John Doe
-            - Jane Smith
-            - Alice Johnson
-          version: 
-            - 1.0
-            - 2.0
-          os: 
-            - ubuntu-latest
-            - windows-latest
-      steps:
-        - name: run echo
-          run: echo "Hello, ${{ matrix.name }}!"
-        - name: run echo version
-          run: echo "Version ${{ matrix.version }}"
-        - name: run echo os
-          run: echo "OS  ${{ matrix.os }}"
+    # job-matrix:
+    #   runs-on: ${{ matrix.os }}
+    #   strategy:
+    #     matrix:
+    #       name: 
+    #         - John Doe
+    #         - Jane Smith
+    #         - Alice Johnson
+    #       version: 
+    #         - 1.0
+    #         - 2.0
+    #       os: 
+    #         - ubuntu-latest
+    #         - windows-latest
+    #   steps:
+    #     - name: run echo
+    #       run: echo "Hello, ${{ matrix.name }}!"
+    #     - name: run echo version
+    #       run: echo "Version ${{ matrix.version }}"
+    #     - name: run echo os
+    #       run: echo "OS  ${{ matrix.os }}"
