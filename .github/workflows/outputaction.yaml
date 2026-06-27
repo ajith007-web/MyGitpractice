@@ -1,2 +1,13 @@
 name: output-workflow
-on: work
+on: workflow_dispatch
+jobs:
+    job1:
+      runs-on: ubuntu-latest
+      steps:
+        - name: step1
+          id: step1
+          run: |
+            echo "myoutput=hi this is from output" >> $GITHUB_OUTPUT
+        - name: step2
+          run: |
+            echo  "this is by step1 ${{steps.step1.outputs.myoutput}}
