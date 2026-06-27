@@ -7,7 +7,7 @@ jobs:
         - name: step1
           id: step1
           run: |
-            echo "myoutput=hi this is from output" >> $GITHUB_OUTPUT
+            echo "myoutput=hi this is step 1" >> $GITHUB_OUTPUT
         - name: step2
           run: |
             echo  "this is by step1 ${{steps.step1.outputs.myoutput}}
