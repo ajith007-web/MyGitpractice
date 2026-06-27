@@ -10,4 +10,4 @@ jobs:
             echo "myoutput=hi this is step 1" >> $GITHUB_OUTPUT
         - name: step2
           run: |
-            echo  "this is by step1 ${{steps.step1.outputs.myoutput}}
+            echo  "this is by step1 ${{steps.step1.outputs.myoutput}}"
