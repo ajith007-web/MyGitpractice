@@ -53,24 +53,24 @@ jobs:
       - name: step 2
         run: echo ${{env.MY_ENV_VAR}}
 
-    job-matrix:
-      runs-on: ${{ matrix.os }}
-      strategy:
-        matrix:
-          name: 
-            - John Doe
-            - Jane Smith
-            - Alice Johnson
-          version: 
-            - 1.0
-            - 2.0
-          os: 
-            - ubuntu-latest
-            - windows-latest
-      steps:
-        - name: run echo
-          run: echo "Hello, ${{ matrix.name }}!"
-        - name: run echo version
-          run: echo "Version ${{ matrix.version }}"
-        - name: run echo os
-          run: echo "OS  ${{ matrix.os }}"
+  job-matrix:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        name: 
+          - John Doe
+          - Jane Smith
+          - Alice Johnson
+        version: 
+          - 1.0
+          - 2.0
+        os: 
+          - ubuntu-latest
+          - windows-latest
+    steps:
+      - name: run echo
+        run: echo "Hello, ${{ matrix.name }}!"
+      - name: run echo version
+        run: echo "Version ${{ matrix.version }}"
+      - name: run echo os
+        run: echo "OS  ${{ matrix.os }}"
